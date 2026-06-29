@@ -1,0 +1,68 @@
+:root, body, #app {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#app {
+  background-color: #d8d8d8;
+  display: flex;
+  flex-direction: column;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.icon-btn {
+  cursor: pointer;
+  padding: 6px 12px 6px 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #3363e9;
+  border: none;
+  border-radius: 20px;
+  color: white;
+}
+
+.icon-btn:hover {
+  background-color: #5482ff;
+}
+
+.icon-btn:hover:active {
+  background-color: #476dd8;
+}
+
+.flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mb-6 {
+  margin-bottom: 6px;
+}
+
+.p-1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
