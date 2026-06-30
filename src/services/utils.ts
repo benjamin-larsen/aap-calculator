@@ -49,6 +49,14 @@ export function formatMoney(value: string) {
   return seperateNumber(formatNumber(value)) + " kr";
 }
 
+function normalizeUTC(date: Date) {
+  return Date.UTC(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate()
+  )
+}
+
 function normalizeDate(date: Date) {
   return new Date(
     date.getFullYear(),
@@ -60,7 +68,7 @@ function normalizeDate(date: Date) {
 export type DateRange = [Date, Date];
 
 // Returns it so that the first is lowest.
-function normalizeDateRange(range: DateRange): DateRange {
+export function normalizeDateRange(range: DateRange): DateRange {
   const first = normalizeDate(range[0]);
   const second = normalizeDate(range[1]);
 
@@ -135,7 +143,7 @@ const DAY_MS = 1000 * 60 * 60 * 24;
 
 export function diffDays(start: Date, end: Date) {
   const startingDay = (start.getDay() + 6) % 7;
-  const days = Math.floor(Math.abs(normalizeDate(end).valueOf() - normalizeDate(start).valueOf()) / DAY_MS) + 1;
+  const days = Math.floor(Math.abs(normalizeUTC(end).valueOf() - normalizeUTC(start).valueOf()) / DAY_MS) + 1;
 
   return {
     startingDay,

@@ -10,6 +10,10 @@
   flex-direction: column;
 }
 
+#app > * {
+  flex-shrink: 0;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Source Sans 3", sans-serif;

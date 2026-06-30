@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ConfirmDialog, DynamicDialog } from 'primevue';
 import RatesSection from './components/RatesSection.vue';
+import { payouts } from './services/aap.ts';
+import PayoutSection from './components/PayoutSection.vue';
 
 </script>
 
@@ -16,6 +18,7 @@ import RatesSection from './components/RatesSection.vue';
   </div>
   <div class="app-container">
     <RatesSection />
+    <PayoutSection />
   </div>
 </template>
 
@@ -50,5 +53,6 @@ import RatesSection from './components/RatesSection.vue';
   overflow: auto;
   padding: 16px;
   padding-bottom: 0;
+  flex-shrink: 1 !important;
 }
 </style>
